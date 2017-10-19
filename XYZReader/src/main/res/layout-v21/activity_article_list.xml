@@ -25,12 +25,10 @@
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
         android:layout_height="112dp"
-        android:background="?colorPrimary"
         android:elevation="@dimen/appbar_elevation">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:layout_marginLeft="@dimen/list_toolbar_side_margin"
             android:layout_marginRight="@dimen/list_toolbar_side_margin"
             android:layout_width="match_parent"
@@ -47,16 +45,15 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:background="@drawable/add_fab_background"
-        android:src="@drawable/ic_add_white_24dp"
-        app:fabSize="normal"
-        android:elevation="@dimen/fab_elevation"
-        app:pressedTranslationZ="@dimen/fab_press_translation_z"
-        android:stateListAnimator="@anim/fab_state_list_anim"
-        android:layout_margin="16dp"
-        android:layout_gravity="bottom|end"
+        android:id="@+id/fab_commonActions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/fab_commonActions"/>
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:backgroundTint="@color/accent"
+        android:elevation="@dimen/fab_elevation"
+        android:src="@drawable/ic_add_white_24dp"
+        app:fabSize="normal"
+        app:pressedTranslationZ="@dimen/fab_press_translation_z" />
 
 </android.support.design.widget.CoordinatorLayout>
