@@ -16,7 +16,7 @@
 -->
 
 <resources>
-    <style name="Theme.Bacon.Detail" parent="@style/Theme.AppCompat.Light">
+    <style name="Theme.Bacon.Detail" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:colorPrimary">@color/primary</item>
         <item name="android:colorPrimaryDark">@color/primary_dark</item>

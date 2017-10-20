@@ -22,10 +22,12 @@
     </android.support.v4.widget.SwipeRefreshLayout>
 
     <android.support.design.widget.AppBarLayout
+        android:backgroundTint="@color/primary"
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
         android:layout_height="112dp"
-        android:elevation="@dimen/appbar_elevation">
+        android:elevation="@dimen/appbar_elevation"
+        android:gravity="bottom">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
