@@ -1,8 +1,10 @@
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/coordinator_layout">
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh_layout"
@@ -51,9 +53,8 @@
         android:src="@drawable/ic_add_white_24dp"
         app:fabSize="normal"
         android:elevation="@dimen/fab_elevation"
-        app:pressedTranslationZ="@dimen/fab_press_translation_z"
-        android:stateListAnimator="@anim/fab_state_list_anim"
-        android:layout_margin="16dp"
+        android:stateListAnimator="@animator/fab_state_list_anim"
+        android:layout_margin="@dimen/fab_margin"
         android:layout_gravity="bottom|end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

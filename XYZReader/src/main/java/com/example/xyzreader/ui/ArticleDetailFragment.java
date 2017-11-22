@@ -16,6 +16,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import android.media.Image;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.graphics.Palette;
@@ -239,8 +241,7 @@ public class ArticleDetailFragment extends Fragment implements
                         public void onResponse(ImageLoader.ImageContainer imageContainer, boolean b) {
                             Bitmap bitmap = imageContainer.getBitmap();
                             if (bitmap != null) {
-                                Palette p = Palette.generate(bitmap, 12);
-                                mMutedColor = p.getDarkMutedColor(0xFF333333);
+                                new ImageLoadingAsync().execute(bitmap, imageContainer);
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
                                 mRootView.findViewById(R.id.meta_bar)
                                         .setBackgroundColor(mMutedColor);
@@ -300,5 +301,22 @@ public class ArticleDetailFragment extends Fragment implements
         return mIsCard
                 ? (int) mPhotoContainerView.getTranslationY() + mPhotoView.getHeight() - mScrollY
                 : mPhotoView.getHeight() - mScrollY;
+    }
+
+    private class ImageLoadingAsync extends AsyncTask<Object, Void, Void>{
+
+        @Override
+        protected Void doInBackground(Object... params) {
+            Bitmap bitmap = (Bitmap) params[0];
+            ImageLoader.ImageContainer imageContainer = (ImageLoader.ImageContainer) params[1];
+
+
+            Palette p = Palette.from(bitmap).generate();
+            mMutedColor = p.getDarkMutedColor(0xFF333333);
+
+
+
+            return null;
+        }
     }
 }
